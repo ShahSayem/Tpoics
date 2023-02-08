@@ -19,13 +19,8 @@ void sieveOfEratosthenes()
 
 int main()
 {
-    // int t;
-    // cin>>t;
-
-    // while (t--){
-        sieveOfEratosthenes();
-        cout<<endl;     
-    // }
+    sieveOfEratosthenes();
+    cout<<endl;     
     
     return 0;
 }

@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void solve()
+int main()
 {
     map <int, int> freq;
 
@@ -13,21 +13,7 @@ void solve()
 
     freq[4]++;
 
-    cout<<freq[10]<<" "<<freq[4]<<" "<<freq[2];
-    
-
-        
-}
-
-int main()
-{
-    // int t;
-    // cin>>t;
-
-    // while (t--){
-        solve();
-        // cout<<endl;     
-    // }
+    cout<<freq[10]<<" "<<freq[4]<<" "<<freq[2]; 
     
     return 0;
 }
