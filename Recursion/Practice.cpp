@@ -1,45 +1,36 @@
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
+#define Shah_Sayem ios_base::sync_with_stdio(false);cin.tie(NULL);
+typedef long long ll;
+
+const long double pi = 3.14159265358979323846;
+const ll MOD = 1e9+7;
+const int MAX = 10000000;
+
+//int dp[MAX];
+
+///.........Graph.........///
+//vector <int> adj[MAX];
+int X[] = {1, -1, 0, 0};
+int Y[] = {0, 0, 1, -1};
+
+void solve()
+{
+    
+}
+
 int main()
 {
-    // int n;
-    // cin>>n;
-    // for (int i = 0; i <= n; i++){
-    //     for (int j = 0; j <= n; j++){
-    //         for (int k = 0; k <= n; k++){
-    //             for (int l = 0; l <= n; l++){
-    //                 for (int m = 0; m <= n; m++){
-    //                     if ((i%7 == 0 || i%10 == 7) && (j%7 == 0 || j%10 == 7) && (k%7 == 0 || k%10 == 7) && (l%7 == 0 || l%10 == 7) && (m%7 == 0 || m%10 == 7)){
-    //                         if (i+j+k+l+m == n){
-    //                             cout<<i<<" "<<j<<" "<<k<<" "<<l<<" "<<m<<"\n\n";
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    int n = 2, x;
-    char ch;
-    vector <pair <char, vector<int> > > px(n);
-    for (auto it:px){
-        cin>>ch;
-        it.first = ch;
-        for (int j = 0; j < n; j++){
-            cin>>x;
-            it.second.push_back(x);
+    Shah_Sayem
 
-            cout<<it.second[j]<<" ";
-        }
+    int t = 1;
+    cin>>t;
+    while (t--){
+        solve();
         cout<<"\n";
     }
 
-    for (auto it:px){
-        for (auto it2:it.second){
-            cout<<it2<<" ";
-        }
-    }
-    
-    return 0; 
+    return 0;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: SegmentTree","url":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Segment Tree\\SegmentTree.cpp","tests":[{"id":1676404047575,"input":"7\n5 1 2 6 3 5 9","output":"16\n31\n35"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Segment Tree\\SegmentTree.cpp","group":"local","local":true}
