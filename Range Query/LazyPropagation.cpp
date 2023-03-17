@@ -25,7 +25,7 @@ void init(int node, int b, int e)
     tree[node].sum = tree[left].sum + tree[right].sum;
 }
 
-int query(int node, int b, int e, int i, int j, int carry = 0)
+ll query(int node, int b, int e, int i, int j, ll carry = 0)
 {
     if (i > e || j < b){
         return 0;
@@ -39,8 +39,8 @@ int query(int node, int b, int e, int i, int j, int carry = 0)
     int right = node * 2 + 2;
     int mid = (b + e) / 2;
 
-    int leftSum = query(left, b, mid, i, j, carry + tree[node].prop);
-    int rightSum = query(right, mid + 1, e, i, j, carry + tree[node].prop);
+    ll leftSum = query(left, b, mid, i, j, carry + tree[node].prop);
+    ll rightSum = query(right, mid + 1, e, i, j, carry + tree[node].prop);
     
     return leftSum + rightSum;
 }
@@ -89,15 +89,6 @@ int main()
             update(0, 0, n-1, l, r, val);
         }
     }
-    
-    // cout<<tree[1]<<"\n";
-    // cout<<query(0, 0, 6, 2, 5, 0);
-
-
-
-    // update(0, 0, 7, 2, 5, 2);
-    // update(0, 0, 7, 3, 7, 3);
-    // cout<<query(0, 0, 7, 3, 5)<<"\n";
     
     return 0;
 }

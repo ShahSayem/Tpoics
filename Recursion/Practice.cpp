@@ -1,36 +1,38 @@
-#include <iostream>
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define mx 100005
+#define lld long long int
 using namespace std;
-
-#define Shah_Sayem ios_base::sync_with_stdio(false);cin.tie(NULL);
-typedef long long ll;
-
-const long double pi = 3.14159265358979323846;
-const ll MOD = 1e9+7;
-const int MAX = 10000000;
-
-//int dp[MAX];
-
-///.........Graph.........///
-//vector <int> adj[MAX];
-int X[] = {1, -1, 0, 0};
-int Y[] = {0, 0, 1, -1};
-
-void solve()
-{
-    
-}
+lld arr[mx];
+//lld tree[mx*3];
 
 int main()
 {
-    Shah_Sayem
 
-    int t = 1;
-    cin>>t;
-    while (t--){
-        solve();
-        cout<<"\n";
+    int x = 27, cnt = 0;
+    bool check = 0;
+    for (int i = 0; i < 10; i++){
+        check = 0;
+        cnt = 0;
+        while (cnt < 10){
+            cnt++;
+
+            if (cnt > 5){
+                cout<<i<<" "<<cnt<<" ";
+                cnt = 0;
+                check = 1;
+                break;
+            }
+
+            if (check){
+                cout<<"Check"<<"\n";
+            }
+            else {
+                cout<<"Not"<<"\n";
+            }
+        }      
     }
-
+    
+    
+    //cout<<"\n\n"<<cnt;
     return 0;
 }

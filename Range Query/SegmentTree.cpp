@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int MAX = 10000000+5;
+typedef long long ll;
+const int MAX = 100000+5;
 
 int arr[MAX];
 int tree[4*MAX+1];
@@ -23,7 +24,7 @@ void init(int node, int b, int e)   //b-e: range
     tree[node] = tree[left] + tree[right];
 }
 
-int query(int node, int b, int e, int i, int j)
+ll query(int node, int b, int e, int i, int j)
 {
     if (b > j || e < i){
         return 0;
@@ -37,8 +38,8 @@ int query(int node, int b, int e, int i, int j)
     int right = node*2 + 2;
     int mid = (b+e)/2;
 
-    int leftSum = query(left, b, mid, i, j);
-    int rightSum = query(right, mid+1, e, i, j);
+    ll leftSum = query(left, b, mid, i, j);
+    ll rightSum = query(right, mid+1, e, i, j);
     return leftSum + rightSum;
 }
 
