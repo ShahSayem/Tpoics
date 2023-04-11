@@ -1,15 +1,10 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
-#define Shah_Sayem ios_base::sync_with_stdio(false);cin.tie(NULL);
-typedef long long ll;
-
-const ll MOD = 1e9+7;
 const int MAX = 100000+5;
 int par[MAX], circle[MAX];
 
-int Find (int x){
+int Find (int x){          //Incomplete -> LU ACM
     if (par[x] = x){
         return x;
     }
@@ -35,7 +30,7 @@ void Union(int u, int v)
     }
 }
 
-void solve()
+int main()
 {
     int n, u, v, num = 1;
     cin>>n;
@@ -59,17 +54,6 @@ void solve()
     }
     
     //cout<<par[3]<<"\n";
-}
-
-int main()
-{
-    Shah_Sayem
-
-    int t = 1;
-    cin>>t;
-    while (t--){
-        solve();
-    }
 
     return 0;
 }

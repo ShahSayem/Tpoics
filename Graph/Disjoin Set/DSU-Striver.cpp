@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-
 class DisjointSet 
 {
     vector <int> rank, parent, sz;

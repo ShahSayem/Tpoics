@@ -1,0 +1,1 @@
+{"name":"Local: Trie","url":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Trie.cpp","tests":[{"id":1680290768413,"input":"1\n5\nman \nwomen\nwild\nsteve\njobs\n5\nmen\napple\njob\njobs\nman","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Trie.cpp","group":"local","local":true}
