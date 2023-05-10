@@ -21,7 +21,7 @@ int Y[] = {0, 0, 1, -1};
 
 void solve()
 {
-    
+
 }
 
 int main()
@@ -30,7 +30,8 @@ int main()
 
     int tc = 1;
     cin>>tc;
-    while (tc--){
+    for (int i = 1; i <= tc; i++){
+        cout<<"Case "<<i<<": ";
         solve();
         cout<<"\n";
     }

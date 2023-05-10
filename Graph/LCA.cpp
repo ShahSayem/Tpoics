@@ -23,29 +23,26 @@ void dfs(int a, int p)
     }
 }
 
-int getLCA(int a, int b) //O(log(N))
+int getLCA(int a, int b)    //O(N)
 {
     if (depth[a] < depth[b]){
         swap(a, b);
     }
 
-    int d = depth[a] - depth[b];
-    for(int i = LOG-1; i >= 0 ; i--){
-        if (depth[parent[a][i]] >= depth[b])
-            a = parent[a][i];
+    while (depth[a] > depth[b]){
+        a = parent[a][0];
     }
+    
     
     if (a == b)
         return a;
 
-    for(int i = LOG-1; i >= 0 ; i--){
-        if (parent[a][i] != parent[b][i]){
-            a = parent[a][i];
-            b = parent[b][i];
-        }
+    while (a != b){
+        a = parent[a][0];
+        b = parent[b][0];
     }
 
-    return parent[a][0];   //Here, parent[a][0] = parent[b][0]
+    return a;   //Here, parent[a][0] = parent[b][0]
 }
 
 int main()
