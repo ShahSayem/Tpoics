@@ -18,10 +18,12 @@ const int MAX = 10000000+5;
 //vector <int> adj[MAX];
 int X[] = {1, -1, 0, 0};
 int Y[] = {0, 0, 1, -1};
+int arr[MAX];
 
-void solve()
+
+void solve(int p)
 {
-
+    cout<<arr[p]+1;
 }
 
 int main()
@@ -29,10 +31,10 @@ int main()
     Shah_Sayem
 
     int tc = 1;
-    cin>>tc;
+    // cin>>tc;
     for (int i = 1; i <= tc; i++){
         cout<<"Case "<<i<<": ";
-        solve();
+        solve(-1);
         cout<<"\n";
     }
 

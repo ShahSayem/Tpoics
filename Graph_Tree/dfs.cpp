@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const int MAX = 10000000+5;
+
 ///.........Graph.........///
-vector <int> adj[10000000];
+vector <int> adj[MAX];
 vector <int> travers;
-bool vis[10000000] = {0};
+bool vis[MAX];
 int X[] = {1, -1, 0, 0};
 int Y[] = {0, 0, 1, -1};
 
