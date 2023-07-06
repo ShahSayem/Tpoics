@@ -12,74 +12,65 @@ const int MOD1 = 127657753, MOD2 = 987654319;
 // collusion rate = 1 / MOD; if i use double hashing collusion rate will be 1 / (MOD1 * MOD2);
 // const __int128 MOD = 202206214218227; // More efficient module for the __int128 datatype
 
-struct two
+vector < pair<ll, ll> > sh, power;
+
+vector < pair<ll, ll> > generateExponents(int n)
 {
-    ll f, s;
-};
-
-bool isEqual(const two& x, const two& y) {
-    return (x.f == y.f && x.s == y.s);
-}
-
-vector <two> sh, power;
-
-vector <two> generateExponents(int n)
-{
-    vector <two> power(n+1);
+    vector < pair<ll, ll> > power(n+1);
     //For first hash
-    power[0].f = 1;
+    power[0].first = 1;
     for (int i = 1; i <= n; i++){
-        power[i].f = (power[i-1].f*BASE1) % MOD1;
+        power[i].first = (power[i-1].first*BASE1) % MOD1;
     }
 
     //For second hash
-    power[0].s = 1;
+    power[0].second = 1;
     for (int i = 1; i <= n; i++){
-        power[i].s = (power[i-1].s*BASE2) % MOD2;
+        power[i].second = (power[i-1].second*BASE2) % MOD2;
     }
 
     return power;
 }
 
-vector <two> generatePrefixHash(string &s)
+vector < pair<ll, ll> > generatePrefixHash(string &s)
 {
-    vector <two> h(s.size());
+    vector < pair<ll, ll> > h(s.size());
     //For first hash
-    h[0].f = s[0]; // storing ascii value
+    h[0].first = s[0]; // storing ascii value
     for (int i = 1; i < s.size(); i++){
-        h[i].f = ((h[i-1].f*BASE1) + s[i]) % MOD1;
+        h[i].first = ((h[i-1].first*BASE1) + s[i]) % MOD1;
     }
 
     //For second hash
-    h[0].s = s[0]; // storing ascii value
+    h[0].second = s[0]; // storing ascii value
     for (int i = 1; i < s.size(); i++){
-        h[i].s = ((h[i-1].s*BASE2) + s[i]) % MOD2;
+        h[i].second = ((h[i-1].second*BASE2) + s[i]) % MOD2;
     }
 
     return h;
 }
 
-two generateHash(string &s)
+pair<ll, ll> generateHash(string &s)
 {
-    two H = {0, 0};
+    pair<ll, ll> H = {0, 0};
     for (auto c: s)
-        H.f = (H.f*BASE1 + c) % MOD1;
+        H.first = (H.first*BASE1 + c) % MOD1;
 
     for (auto c: s)
-        H.s = (H.s*BASE2 + c) % MOD2;
+        H.second = (H.second*BASE2 + c) % MOD2;
 
     return H;
 }
 
-two getHash(int l, int r, vector <two> &h) // hash(s[l...r]) --> s = "aabccd" --> getHash(0, 3) = HashOf(aabc)
+pair<ll, ll> getHash(int l, int r, vector < pair<ll, ll> > &h) // hash(s[l...r]) --> s = "aabccd" --> getHash(0, 3) = HashOf(aabc)
 {
     if (l == 0)
         return h[r];
 
-    ll first = (h[r].f-(h[l-1].f * power[r-l+1].f%MOD1) + MOD1) % MOD1;
-    ll second = (h[r].s-(h[l-1].s * power[r-l+1].s%MOD2) + MOD2) % MOD2;
+    ll f = (h[r].first-(h[l-1].first * power[r-l+1].first%MOD1) + MOD1) % MOD1;
+    ll s = (h[r].second-(h[l-1].second * power[r-l+1].second%MOD2) + MOD2) % MOD2;
 
-    return {first, second};
+    return {f, s};
 }
 
 
@@ -95,10 +86,10 @@ int main()
 
     sh = generatePrefixHash(s1);
     power = generateExponents(n);
-    two hashOfS2 = generateHash(s2);
+    pair<ll, ll> hashOfS2 = generateHash(s2);
 
     for (int i = 0; i <= n-m; i++){
-        if (isEqual(getHash(i, i+m-1, sh), hashOfS2))
+        if (getHash(i, i+m-1, sh) == hashOfS2)
             cout<<i<<" ";
     }
 
