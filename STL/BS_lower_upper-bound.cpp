@@ -28,7 +28,7 @@ int main()
     // can be use for found first occurance
 
 
-    int pos4b = upper_bound(arr, arr+5, 4)-arr; //2 (always return index of immediate next greater element)
+    int pos4b = upper_bound(arr, arr+5, 11)-arr; //2 (always return index of immediate next greater element)
     int pos7b = upper_bound(arr, arr+5, 7)-arr; //3 (always return index of immediate next greater element)
     int pos10b = upper_bound(arr, arr+5, 10)-arr; //5 (always return index of immediate next greater element)
 
