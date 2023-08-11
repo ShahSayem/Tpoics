@@ -1,11 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-vector <int> dijkstra(int v, vector < vector <int> > adj[], int s)
+vector <int> dijkstra(int n, vector < vector <int> > adj[], int s)
 {
     priority_queue < pair<int, int>, vector <pair<int, int>>, greater<pair<int, int>> > pq;
-    vector <int> distTo(v, INT_MAX);
+    vector <int> distTo(n, INT_MAX);
     distTo[s] = 0;
     pq.push({0, s});
 
@@ -21,7 +20,7 @@ vector <int> dijkstra(int v, vector < vector <int> > adj[], int s)
 
             if (dis+w < distTo[v]){
                 distTo[v] = dis+w;
-                pq.push({dis+w, v});
+                pq.push({distTo[v], v});
             }
         }  
     }
@@ -31,16 +30,28 @@ vector <int> dijkstra(int v, vector < vector <int> > adj[], int s)
 
 int main()
 {
-    int v = 3, e = 3, s = 2; 
-    vector < vector <int> > adj[v];
-    adj[0].push_back({1, 1});
-    adj[0].push_back({2, 6});
-    adj[1].push_back({2, 3});
-    adj[1].push_back({0, 1});
-    adj[2].push_back({1, 3});
-    adj[2].push_back({0, 6});
+      //numOfNode
+    int n = 6, s = 0; 
+    vector < vector <int> > adj[n];
+                 //node, weight
+    adj[0].push_back({1, 4});
+    adj[0].push_back({2, 4});
+    adj[1].push_back({0, 4});
+    adj[1].push_back({2, 2});
+    adj[2].push_back({0, 4});
+    adj[2].push_back({1, 2});
+    adj[2].push_back({3, 3});
+    adj[2].push_back({4, 1});
+    adj[2].push_back({5, 6});
+    adj[3].push_back({2, 3});
+    adj[3].push_back({5, 2});
+    adj[4].push_back({2, 1});
+    adj[4].push_back({5, 3});
+    adj[5].push_back({2, 6});
+    adj[5].push_back({3, 2});
+    adj[5].push_back({4, 3});
 
-    vector <int> ans = dijkstra(v, adj, s);
+    vector <int> ans = dijkstra(n, adj, s);
     for (auto it : ans){
         cout<<it<<" ";
     }

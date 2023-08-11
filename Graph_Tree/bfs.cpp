@@ -3,8 +3,6 @@ using namespace std;
 
 ///.........Graph.........///
 vector <int> adj[10000000];
-int X[] = {1, -1, 0, 0};
-int Y[] = {0, 0, 1, -1};
 
 void bfs (int n, int source)
 {
