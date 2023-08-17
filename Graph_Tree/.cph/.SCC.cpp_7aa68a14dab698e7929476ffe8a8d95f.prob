@@ -1,0 +1,1 @@
+{"name":"Local: SCC","url":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Graph_Tree\\SCC.cpp","tests":[{"id":1691736223237,"input":"7 8\n1 2\n2 3\n3 1\n3 4\n4 5\n5 6\n6 7\n7 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\1.Competitive Programming\\Tpoics\\Graph_Tree\\SCC.cpp","group":"local","local":true}
