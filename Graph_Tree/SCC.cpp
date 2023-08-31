@@ -35,6 +35,11 @@ int main()  //O(V+E)
     cin>>n>>m;
 
     memset(vis, 0, sizeof(vis));
+    for (int i = 0; i < MAX; ++i){
+        graph[i].clear();
+        revGraph[i].clear();
+    }
+    
     for (int i = 1; i <= m; i++){
         cin>>u>>v;
 
