@@ -9,19 +9,22 @@ const int MAX = 10000000;
 void binaryRepresentation(int n) //is the bit on or not / Binary representation
 {
     for (int i = 30; i >= 0; i--){
-        if (n & (1LL<<i) != 0)
+        if ((n & (1LL<<i)) != 0){
             cout<<1<<" ";
+        }    
         else
             cout<<0<<" ";
     } 
+    cout<<"\n";
 } 
 
 void bitPositions(int n) //will show the bit positions
 {
-    for (int i = 0; i <= 30; i++){
-        if (n & (1LL<<i) != 0)
+    for (int i = 0; i < 30; i++){
+        if ((n & (1LL<<i)) != 0)
             cout<<i<<" ";
     }
+    cout<<"\n";
 } 
 
 int main()
@@ -33,9 +36,7 @@ int main()
         cin>>n;
 
         binaryRepresentation(n);
-        cout<<"\n";
         bitPositions(n);
-        cout<<"\n";
     }
 
     return 0;
