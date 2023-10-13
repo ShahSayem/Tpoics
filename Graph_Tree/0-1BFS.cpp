@@ -25,7 +25,7 @@ int bfs (int source)
         dq.pop_front();
 
         int childVar, weight;
-        for (auto child:adj[node]){
+        for (auto child: adj[node]){
             childVar = child.first;
             weight = child.second;
 
@@ -53,11 +53,6 @@ int bfs (int source)
 int main()
 {
     Shah_Sayem
-    #ifndef ONLINE_JUDGE
-        freopen("Input.txt", "r", stdin);
-        freopen("Output.txt", "w", stdout);
-        freopen("Error.txt", "w", stderr);
-    #endif
 
     cin>>n>>m;
 

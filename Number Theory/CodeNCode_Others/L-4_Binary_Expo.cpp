@@ -1,19 +1,13 @@
 //Shah Sayem
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
-const long double pi = 3.14159265358979323846;
 const ll MOD = 1e9+7;
 const int MAX = 10000000;
 
-///.........Graph.........///
-//vector <int> adj[10000000];
-int X[] = {1, -1, 0, 0};
-int Y[] = {0, 0, 1, -1};
 
-ll getExp(ll a, ll b)
+ll getExp(ll a, ll b)  //can be used in BigMod
 {
     if (b == 0)
         return 1;

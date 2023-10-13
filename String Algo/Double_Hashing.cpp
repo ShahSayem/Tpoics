@@ -79,7 +79,7 @@ int main()
     generatePrefixHash(s1);
     generateExponents(n);
     pair<int, int> hashOfS2 = generateHash(s2);
-    pair<int, int> hashOfS1 = generateHash(s1);
+    //pair<int, int> hashOfS1 = generateHash(s1);
 
     for (int i = 0; i <= n-m; i++){
         if (getHash(i, i+m-1, sh) == hashOfS2)

@@ -74,7 +74,7 @@ int main()
     cout<<query(0, 0, 6, 2, 5)<<"\n";
     cout<<tree[0]<<"\n";
 
-    update(0, 0, 6, 1, 5);
+    update(0, 0, n-1, 1, 5);
     cout<<tree[0]<<"\n";
 
     return 0;
