@@ -24,7 +24,7 @@ int GCD(int a, int b)
 void numOfDiv(int n)
 {
     vector <int> div;
-    for (int i = 2; i*i <= n ; i++){
+    for (int i = 1; i*i <= n ; i++){
         if (n%i == 0){
             div.push_back(i);
             if (i*i != n){
@@ -46,6 +46,6 @@ int main()
     
     numOfDiv(n);
 
-    cout<<GCD(16, 12);
+    //cout<<GCD(16, 12);
     return 0;
 }
