@@ -15,81 +15,81 @@ struct node {
 
 void trieInsert(string &s)
 {
-    node *cur = root;
+    node *curr = root;
     int n = s.size(), x;
     for (int i = 0; i < n; i++){
         x = s[i]-'a';
 
-        if (cur->next[x] == NULL){
-            cur->next[x] = new node ();
+        if (curr->next[x] == NULL){
+            curr->next[x] = new node ();
         }
 
-        cur = cur->next[x];
-        cur->cntPref++;
+        curr = curr->next[x];
+        curr->cntPref++;
     }
 
-    cur->cntWord++;
+    curr->cntWord++;
 }
 
 int cntWordsEqualTo(string &s)  //Word count
 {
-    node *cur = root;
+    node *curr = root;
     int n = s.size(), x;
     for (int i = 0; i < n; i++){
         x = s[i]-'a';
 
-        if (cur->next[x] == NULL){
+        if (curr->next[x] == NULL){
             return 0;
         }
 
-        cur = cur->next[x];
+        curr = curr->next[x];
     }
 
-    return cur->cntWord;
+    return curr->cntWord;
 }
 
 int cntWordsStartingWith(string &s) //Prefix count
 {
-    node *cur = root;
+    node *curr = root;
     int n = s.size(), x;
     for (int i = 0; i < n; i++){
         x = s[i]-'a';
 
-        if (cur->next[x] == NULL){
+        if (curr->next[x] == NULL){
             return 0;
         }
 
-        cur = cur->next[x];
+        curr = curr->next[x];
     }
 
-    return cur->cntPref;
+    return curr->cntPref;
 }
 
 void wordDel(string &s)
 {
-    node *cur = root;
+    node *curr = root;
     int n = s.size(), x;
     for (int i = 0; i < n; i++){
         x = s[i]-'a';
 
-        if (cur->next[x] == NULL){
+        if (curr->next[x] == NULL){
             return;
         }
 
-        cur = cur->next[x];
-        cur->cntPref--;
+        curr = curr->next[x];
+        curr->cntPref--;
     }
 
-    cur->cntWord--;
+    curr->cntWord--;
 }
 
-void trieDel(node* cur)
+void trieDel(node* curr)
 {
     for (int i = 0; i < 26; i++)
-        if (cur->next[i])
-            trieDel(cur->next[i]);
+        if (curr->next[i])
+            trieDel(curr->next[i]);
 
-    delete(cur);
+    delete(curr);
 }
 
 void solve()
