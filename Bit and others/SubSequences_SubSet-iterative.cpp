@@ -35,7 +35,7 @@ vector < vector <int> > powerSet(vector <int> &v)
 
 int main()
 {
-    vector <int> v = {1, 2, 3};
+    vector <int> v = {1, 1, 2, 3, 3, 4, 7};
     auto ans = powerSet(v);
     for (auto it : ans){
         for (auto it2 : it){

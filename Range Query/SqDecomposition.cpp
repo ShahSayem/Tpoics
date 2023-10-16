@@ -20,12 +20,13 @@ int main()
         SQ[i/sz] = min(SQ[i/sz], arr[i]);
     }
 
-    int q, l, r, mn = INT_MAX;
+    int q, l, r, mn;
     cin>>q;
     while (q--){
         cin>>l>>r;
         l--, r--;
 
+        mn = INT_MAX;
         for (int i = l; i <= r;){
             if ((i%sz == 0) && (i+sz-1 <= r)){
                 mn = min(SQ[i/sz], mn);
@@ -39,8 +40,6 @@ int main()
         } 
 
         cout<<mn<<"\n";   
-
-        mn = INT_MAX;
     }
 
     return 0;
