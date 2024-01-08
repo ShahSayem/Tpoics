@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
 const int MAX = 10000000+5;
 
 class SGTree {
 public:
-    vector <int> tree;
+    vector <ll> tree;
     SGTree(int n){
         tree.resize(4*n+1);
     }
@@ -24,13 +25,13 @@ public:
 
         init(left, b, mid, arr);
         init(right, mid+1, e, arr);
-        tree[node] = min(tree[left], tree[right]);
+        tree[node] = tree[left] + tree[right];
     }
 
-    int query(int node, int b, int e, int i, int j)
+    ll query(int node, int b, int e, int i, int j)
     {
         if (b > j || e < i){
-            return INT_MAX;
+            return 0;
         }
 
         if (b >= i && e <= j){
@@ -41,9 +42,9 @@ public:
         int right = node*2 + 2;
         int mid = (b+e)/2;
 
-        int leftMN = query(left, b, mid, i, j);
-        int rightMN = query(right, mid+1, e, i, j);
-        return min(leftMN, rightMN);
+        ll leftSum = query(left, b, mid, i, j);
+        ll rightSum = query(right, mid+1, e, i, j);
+        return (leftSum + rightSum);
     }
 
     void update (int node, int b, int e, int target, int val)
@@ -62,7 +63,7 @@ public:
 
         update(left, b, mid, target, val);
         update(right, mid+1, e, target, val);
-        tree[node] = min(tree[left], tree[right]);
+        tree[node] = (tree[left] + tree[right]);
     } 
 };
 
