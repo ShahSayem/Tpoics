@@ -8,7 +8,7 @@ const int MAX = 1e7+5;
 
 //PowerSet -> Bit Manipulation
 //O(n*2^n)
-//{1, 2, 3} => {1}, {2}, {1, 2}, {3}, {2, 3}, {1, 3}, {1, 2, 3}
+//{1, 2, 3} =>{}, {1}, {2}, {1, 2}, {3}, {2, 3}, {1, 3}, {1, 2, 3}
 
 vector < vector <int> > powerSet(vector <int> &v)
 {
@@ -35,7 +35,7 @@ vector < vector <int> > powerSet(vector <int> &v)
 
 int main()
 {
-    vector <int> v = {1, 1, 2, 3, 3, 4, 7};
+    vector <int> v = {1, 2, 3}; //1, 1, 2, 3, 3, 4, 7
     auto ans = powerSet(v);
     for (auto it : ans){
         for (auto it2 : it){

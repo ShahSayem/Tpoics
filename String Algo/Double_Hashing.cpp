@@ -7,8 +7,7 @@ const int BASE1 = 137, BASE2 = 277; // to avoid collision we use a prime grater 
 const int MOD1 = 127657753, MOD2 = 987654319;
 #define Shah_Sayem ios_base::sync_with_stdio(false);cin.tie(NULL);
 
-//From Sadman Sakib Vai, DevSkill B13
-//and YouKnowWho
+//From Sadman Sakib Vai, DevSkill B13 and YouKnowWho
 // collusion rate = 1 / MOD; if i use double hashing collusion rate will be 1 / (MOD1 * MOD2) for each hash call;
 // const __int128 MOD = 202206214218227; // More efficient module for the __int128 data type
 
